@@ -52,4 +52,9 @@ body {
     color: #007bff; /* Change color on hover */
   }
   
+  .img {
+    margin: 0;
+    padding: 0;
+    display: block; /* Changes image to block-level element to remove inline spacing */
+  }
   

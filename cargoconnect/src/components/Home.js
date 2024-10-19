@@ -28,7 +28,10 @@ const Home = () => {
         </ul>
       </nav>
       <div>
-        <img src="cargoBanner.png" alt='banner'/>
+        <img src="cargoBanner.png" alt='banner' className="img"/>
+        <Link to='/Home/BookingPage'>
+        <img src="getStarted.png" alt='banner'/>
+        </Link>
     </div>
     </div>
     
