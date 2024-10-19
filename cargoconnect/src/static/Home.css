@@ -1,3 +1,8 @@
+body {
+    background-color: #F7F0E6; /* Example color, change this to any color you prefer */
+    margin: 0;
+    padding: 0;
+  }
 /* Container for the whole home page */
 .home-container {
     text-align: center;
@@ -11,7 +16,7 @@
   
   /* Logo styling */
   .logo {
-    width: 150px; /* Adjust logo width */
+    width: 350px; /* Adjust logo width */
     height: auto;
     font-weight: 600; /* Adjust weight */
     display: block;
@@ -20,14 +25,15 @@
   
   /* Navigation bar styling */
   .nav-bar {
-    background-color: #f8f8f8;
-    padding: 10px 0;
+    background-color: #3E2B05;
+    padding: 15px 0;
   }
   
   .nav-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    size: 18 px;
     display: flex;
     justify-content: center;
   }
@@ -38,11 +44,12 @@
   
   .nav-item a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: 500;
   }
   
   .nav-item a:hover {
     color: #007bff; /* Change color on hover */
   }
+  
   
