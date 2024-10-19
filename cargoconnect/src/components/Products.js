@@ -1,13 +1,9 @@
 // Page for the Products to be listed 
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Products = ({products, setProducts}) => {
-    /**const [products, setProducts] = useState({
-        products: [
-            {itemType: '', pickupLocation: '', dropoffLocation: '', dimensions: '', weight: '', quantity: '', budget: ''}
-        ]
-    });
-    **/
+    const navigate = useNavigate();
     
     const handleProductInputChange = (e, index) => {
         const { name, value } = e.target;
@@ -25,6 +21,11 @@ const Products = ({products, setProducts}) => {
                 { itemType: '', pickupLocation: '', dropoffLocation: '', dimensions: '', weight: '', quantity: '', budget: '' }
             ]
         }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/Home/PoolingResults');
     };
 
     
@@ -96,6 +97,7 @@ return (
 
         <button type="button" className='button' onClick={addNewProduct}>Add New Product</button>
         <br />
+        <button type="button" className='button' onClick={handleSubmit}>Pooling Results</button>
     </div>
 );
 };
