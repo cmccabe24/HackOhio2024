@@ -27,7 +27,11 @@ const Home = () => {
           </li>
         </ul>
       </nav>
+      <div>
+        <img src="cargoBanner.png" alt='banner'/>
     </div>
+    </div>
+    
   );
 }
 
