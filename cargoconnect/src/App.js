@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate} from "react-router-do
 import Home from "./components/Home";
 import BookingPage from "./components/BookingPage";
 import PoolingResults from "./components/PoolingResults";
+import Products from "./components/Products";
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Navigate replace to="/Home" />} />
             <Route path='/Home/BookingPage' element={<BookingPage />} />
             <Route path='/Home/PoolingResults' element={<PoolingResults />} />
+            <Route path='/Home/Products' element={<Products />} />
           </Routes>
         </div>
       </Router>

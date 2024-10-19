@@ -8,6 +8,6 @@ const PoolingResults = () => {
         </div>
     )
 
-}
+};
 
 export default PoolingResults;
