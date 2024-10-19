@@ -1,16 +1,17 @@
 // Page for the Products to be listed 
 import { useState } from "react";
 
-const Products = () => {
-    const [products, setProducts] = useState({
+const Products = ({products, setProducts}) => {
+    /**const [products, setProducts] = useState({
         products: [
             {itemType: '', pickupLocation: '', dropoffLocation: '', dimensions: '', weight: '', quantity: '', budget: ''}
         ]
     });
+    **/
     
     const handleProductInputChange = (e, index) => {
         const { name, value } = e.target;
-        const updatedProducts = products.map((product, i) =>
+        const updatedProducts = products.products.map((product, i) =>
             i === index ? { ...product, [name]: value } : product
         );
         setProducts({ ...products, products: updatedProducts });
@@ -30,7 +31,7 @@ const Products = () => {
 return (
     <div>
         <h3>Products</h3>
-        {products.map((product, index) => (
+        {products.products.map((product, index) => (
             <div key={index} className="productSection">
                 <h4>Product {index + 1}</h4>
                 <label>Item Type</label>
