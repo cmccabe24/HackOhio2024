@@ -53,6 +53,7 @@ body {
   }
   
   .img {
+    width: 1865px;
     margin: 0;
     padding: 0;
     display: block; /* Changes image to block-level element to remove inline spacing */
