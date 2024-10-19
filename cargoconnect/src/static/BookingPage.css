@@ -1,0 +1,125 @@
+
+.bookingPage {
+    /* background-color: #f7f0e6; */
+    background-color: #abdb;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Product Section Styling */
+.productSection {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;    
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  
+  .productSection h4 {
+    font-size: 16px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .productSection input {
+    margin-bottom: 10px;
+  }
+  
+  .productSection label {
+    font-weight: bold;
+  }
+  
+  .productSection input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px;
+  }
+  
+  .productSection input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+  }
+
+/* Flexbox container for products */
+.productContainer {
+    display: flex;               
+    justify-content: center; 
+    align-items: center;         
+    margin: 0px 0;        
+    gap: 100px;
+    margin-top: 30px;  
+    background-color: #f7f0e6;      
+}
+
+.productItem {
+    text-align: center;
+    width: 150px;
+}
+
+.productImage {
+    width: 200px;
+    height: 250px; 
+}
+
+.shop {
+    
+    width: 100vw;  /* Set width to 100% of the page */
+    height: 400px; /* This maintains the aspect ratio */
+    display: block; /* Remove any inline-block margin */
+    margin: 15; /* Ensure no margin around the image */
+    padding: 0;
+
+}
+
+.bannerImage {
+    width: 1410px;
+    height: 350px;
+}
+
+.logoImage {
+    width: 700px;
+    height: 300px;
+}
+
+.cartContainer {
+    margin-top: 50px;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #FFC95F;
+}
+
+.cartList {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.cartItem { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cartItemImage {
+    width: 50px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.title {
+    font-family: 'Protest Strike', sans-serif;
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+.checkoutImage {
+    width: 250px; /* Adjust as needed */
+    height: 130px; /* Maintain aspect ratio */
+}
