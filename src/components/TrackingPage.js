@@ -46,7 +46,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-const TrackingPage = () => {
+const TrackingPage = ({ products, setProducts }) => {
   const mapContainerStyle = {
     width: '100%',
     height: '400px',  // Set the height of the map
@@ -75,30 +75,36 @@ const TrackingPage = () => {
       const interval = setInterval(() => {
         step++;
         if (step <= totalSteps) {
+          if (step == totalSteps/2) {
+            alert('Shipment is halfway to its\' destination');
+          }
           const newLat = origin.lat + (destination.lat - origin.lat) * (step / totalSteps);
           const newLng = origin.lng + (destination.lng - origin.lng) * (step / totalSteps);
           setCurrentLocation({ lat: newLat, lng: newLng });
         } else {
           clearInterval(interval); // Stop the interval when the package reaches the destination
           setCurrentLocation(destination); // Ensure we end at the destination
+          alert(`Shipment has Arrived at ${products.products[0].dropoffLocation}`);
         }
       }, 100); // Update every 100 milliseconds
       
       return () => clearInterval(interval); // Clean up interval on unmount
     };
 
+    console.log("Product from Tracking: ", products);
     movePackage(); // Start the package movement simulation
+    alert(`Shipment is beginning transit. Departuring from ${products.products[0].pickupLocation}`);
   }, []);
 
   const focusOnPackage = () => {
     console.log("Curr Loc: ", currentLocation);
     setMapCenter(currentLocation);
-  }
+  };
 
   // Set icon details only when google is available
   const markerIcon = window.google ? {
     url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png", // Red marker icon URL
-    scaledSize: new window.google.maps.Size(40, 40), // Size of the marker
+    scaledSize: { width: 40, height: 40 }, // Size of the marker
   } : undefined; // Fallback to undefined if google is not loaded
 
   return (

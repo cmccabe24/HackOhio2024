@@ -3,30 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../static/PoolingResults.css";
 
-const Products = ({ products, setProducts }) => {
+const Products = ({ products, setProducts, handleProductInputChange, addNewProduct }) => {
     const navigate = useNavigate();
-
-    const handleProductInputChange = (e, index) => {
-        const { name, value } = e.target;
-        const updatedProducts = products.products.map((product, i) =>
-            i === index ? { ...product, [name]: value } : product
-        );
-        setProducts({ ...products, products: updatedProducts });
-    };
-
-    const addNewProduct = () => {
-        setProducts((prevState) => ({
-            ...prevState,
-            products: [
-                ...prevState.products,
-                { itemType: '', pickupLocation: '', dropoffLocation: '', dimensions: '', weight: '', quantity: '', budget: '' }
-            ]
-        }));
-    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate('/Home/PoolingResults');
+        console.log("Products: ", products);
     };
 
     return (

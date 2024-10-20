@@ -25,6 +25,24 @@ function App() {
     ]
   });
 
+  const handleProductInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const updatedProducts = products.products.map((product, i) =>
+        i === index ? { ...product, [name]: value } : product
+    );
+    setProducts({ ...products, products: updatedProducts });
+  };
+
+  const addNewProduct = () => {
+      setProducts((prevState) => ({
+          ...prevState,
+          products: [
+              ...prevState.products,
+              { itemType: '', pickupLocation: '', dropoffLocation: '', dimensions: '', weight: '', quantity: '', budget: '' }
+          ]
+      }));
+  };
+
   const [paymentInformation, setPaymentInformation] = useState([
 
   ]);
@@ -40,7 +58,7 @@ function App() {
             <Route path='/Home/Contact' element={<Contact/>} />
             <Route path='/Home/BookingPage' element={<BookingPage shippingInfo={shippingInfo} setShippingInfo={setShippingInfo}/>} />
             <Route path='/Home/PoolingResults' element={<PoolingResults />} />
-            <Route path='/Home/Products' element={<Products products={products} setProducts={setProducts}/>} />
+            <Route path='/Home/Products' element={<Products products={products} setProducts={setProducts} handleProductInputChange={handleProductInputChange} addNewProduct={addNewProduct}/>} />
             <Route path='/Home/TrackingPage' element={<TrackingPage products={products} setProducts={setProducts}/>} />
             <Route path='/Home/PaymentInformation' element={<PaymentInformation paymentInformation={paymentInformation} setPaymentInformation={setPaymentInformation} />} />
           </Routes>
