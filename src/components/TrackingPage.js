@@ -1,57 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"; // Reverted to use Marker
-import '../static/TrackingPage.css';  // Assuming you have the CSS file
-
-
-const mapContainerStyle = {
-  width: '100%',
-  height: '400px',
-};
-
-const center = {
-  lat: 40.712776,  // Start coordinates (example: New York City)
-  lng: -74.005974,
-};
+import React from 'react';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 const TrackingPage = () => {
-  const [position, setPosition] = useState(center);
 
-  useEffect(() => {
-    // Simulating the shipment's movement by updating position
-    const interval = setInterval(() => {
-      setPosition(prevPos => ({
-        lat: prevPos.lat + 0.001,  // Simulated increment in latitude
-        lng: prevPos.lng + 0.001   // Simulated increment in longitude
-      }));
-    }, 2000); // Update every 2 seconds
+  const mapContainerStyle = {
+    width: '100%',
+    height: '400px',  // Set the height of the map
+  };
+  
+  const center = {
+    lat: 40.712776,  // Example: New York City latitude
+    lng: -74.005974, // Example: New York City longitude
+  };
 
-    return () => clearInterval(interval); // Clean up interval
-  }, []);
+  const googleApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  console.log("Key: ", googleApiKey);
 
   return (
-    <div className="trackingPage">
+    <div>
       <h2>Shipment Tracking</h2>
-      <nav className="nav-bar">
-        <ul className="nav-list">
-          <li className="nav-item">
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="mapContainer">
-        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-          <GoogleMap
-            mapContainerStyle={mapContainerStyle}
-            zoom={10}
-            center={position}
-          >
-            <Marker position={position} title="Shipment Location" />
-          </GoogleMap>
-        </LoadScript>
-      </div>
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          center={center}
+          zoom={10}
+        />
+      </LoadScript>
     </div>
   );
-}
+};
 
 export default TrackingPage;

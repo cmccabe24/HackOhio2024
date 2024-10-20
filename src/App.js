@@ -6,6 +6,8 @@ import PoolingResults from "./components/PoolingResults";
 import Products from "./components/Products";
 import TrackingPage from "./components/TrackingPage";
 import PaymentInformation from "./components/PaymentInformation";
+import About from "./components/About";
+import Contact from "./components/Contact";
 import './App.css';
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
   });
 
   const [paymentInformation, setPaymentInformation] = useState([
-    
+
   ]);
 
   return (
@@ -34,10 +36,12 @@ function App() {
           <Routes>
             <Route path='/Home' element={<Home/>} />
             <Route path="/" element={<Navigate replace to="/Home" />} />
+            <Route path='/Home/About' element={<About/>} />
+            <Route path='/Home/Contact' element={<Contact/>} />
             <Route path='/Home/BookingPage' element={<BookingPage shippingInfo={shippingInfo} setShippingInfo={setShippingInfo}/>} />
             <Route path='/Home/PoolingResults' element={<PoolingResults />} />
             <Route path='/Home/Products' element={<Products products={products} setProducts={setProducts}/>} />
-            <Route path='/Home/TrackingPage' element={<TrackingPage/>} />
+            <Route path='/Home/TrackingPage' element={<TrackingPage products={products} setProducts={setProducts}/>} />
             <Route path='/Home/PaymentInformation' element={<PaymentInformation paymentInformation={paymentInformation} setPaymentInformation={setPaymentInformation} />} />
           </Routes>
         </div>
