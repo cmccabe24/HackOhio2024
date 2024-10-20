@@ -23,6 +23,8 @@ function App() {
     ]
   });
 
+  const [paymentInformation, setPaymentInformation] = useState([]);
+
   return (
     <div>
       <Router>
