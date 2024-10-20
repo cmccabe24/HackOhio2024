@@ -1,125 +1,93 @@
 
-.bookingPage {
-    /* background-color: #f7f0e6; */
-    background-color: #abdb;
-    min-height: 100vh;
-    padding: 20px;
-    text-align: center;
+
+
+.formField {
+    margin-bottom: 25px; /* Space between fields */
+    background-color: linear-gradient(135deg, #F5C065, #31603D);    border-radius: 8px;
+    padding: 0px; /* Padding inside the field container */
+    border-radius: 4px; /* Rounded corners */
 }
 
-/* Product Section Styling */
-.productSection {
-    margin-top: 20px;
+.formField label {
+    font-weight: bold; /* Make the label bold */
+}
+
+.formField input[type="text"] {
+    width: 80%; /* Make input take full width of container */
+    border:5px solid #ffffff; /* Border color */
+    border-radius: 4px; /* Rounded corners for inputs */
+    padding: 8px; /* Padding for input */
+    font-size: 16px; /* Input font size */
+    max-width:800px; /* Set a width for the form */
+}
+
+.formField input[type="text"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25); /* Shadow on focus */
+}
+.formBackground {
+    background: #F7F0E6;
+    min-height: 100vh;
+    padding: 20px;
     display: flex;
-    flex-direction: column;    
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-  }
-  
-  .productSection h4 {
-    font-size: 16px;
-    color: #007bff;
-    margin-bottom: 10px;
-  }
-  
-  .productSection input {
-    margin-bottom: 10px;
-  }
-  
-  .productSection label {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    max-width:1000px; /* Set a width for the form */
+    padding: 01px;
+    background: linear-gradient(135deg, #F5C065, #31603D);    border-radius: 8px;
+    text-align: center; /* Center-align the form text */
+}
+
+form h2 {
+    margin-bottom: 50px;
+    font-size: 24px;
+    color: #333;
+}
+
+.formField {
+    margin-bottom: 20px; /* Space between fields */
+    width: 500px;
+}
+
+.formField label {
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
-  }
-  
-  .productSection input[type="text"] {
+    text-align: center; /* Align labels to the center */
+}
+
+.formField input[type='text'] {
+    width: 80%;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 6px;
-  }
-  
-  .productSection input[type="text"]:focus {
+    text-align: center; /* Center-align input text */
+}
+
+.formField input[type='text']:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
-  }
-
-/* Flexbox container for products */
-.productContainer {
-    display: flex;               
-    justify-content: center; 
-    align-items: center;         
-    margin: 0px 0;        
-    gap: 100px;
-    margin-top: 30px;  
-    background-color: #f7f0e6;      
 }
 
-.productItem {
-    text-align: center;
-    width: 150px;
+.button {
+    background-color: #fff; /* Button color */
+    color: #000000; /* Text color */
+    padding: 15px 0; /* Padding */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 30%; /* Set the width */
+    margin: 20px auto; /* Center the button and add space above */
+    display: block; /* Ensures the button centers */
 }
 
-.productImage {
-    width: 200px;
-    height: 250px; 
-}
-
-.shop {
+.button:hover {
     
-    width: 100vw;  /* Set width to 100% of the page */
-    height: 400px; /* This maintains the aspect ratio */
-    display: block; /* Remove any inline-block margin */
-    margin: 15; /* Ensure no margin around the image */
-    padding: 0;
-
-}
-
-.bannerImage {
-    width: 1410px;
-    height: 350px;
-}
-
-.logoImage {
-    width: 700px;
-    height: 300px;
-}
-
-.cartContainer {
-    margin-top: 50px;
-    text-align: left;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #FFC95F;
-}
-
-.cartList {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-}
-
-.cartItem { 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.cartItemImage {
-    width: 50px; /* Set the desired width */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between image and text */
-}
-
-.title {
-    font-family: 'Protest Strike', sans-serif;
-    margin-bottom: 50px;
-    font-size: 50px;
-}
-
-.checkoutImage {
-    width: 250px; /* Adjust as needed */
-    height: 130px; /* Maintain aspect ratio */
+    background-color: #0056b3;
 }
