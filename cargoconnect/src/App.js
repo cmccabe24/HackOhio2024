@@ -4,6 +4,8 @@ import Home from "./components/Home";
 import BookingPage from "./components/BookingPage";
 import PoolingResults from "./components/PoolingResults";
 import Products from "./components/Products";
+import TrackingPage from "./components/TrackingPage";
+import PaymentInformation from "./components/PaymentInformation";
 import './App.css';
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
             <Route path='/Home/BookingPage' element={<BookingPage />} />
             <Route path='/Home/PoolingResults' element={<PoolingResults />} />
             <Route path='/Home/Products' element={<Products products={products} setProducts={setProducts}/>} />
+            <Route path='/Home/TrackingPage' element={<TrackingPage/>} />
+            <Route path='/Home/PaymentInformation' element={<PaymentInformation />} />
           </Routes>
         </div>
       </Router>

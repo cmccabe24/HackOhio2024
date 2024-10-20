@@ -1,6 +1,6 @@
 // Page for the Products to be listed 
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Products = ({products, setProducts}) => {
     const navigate = useNavigate();

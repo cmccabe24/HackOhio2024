@@ -1,6 +1,6 @@
 // Booking Page
 import { useState} from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../static/BookingPage.css';
 
 const BookingPage = () => {

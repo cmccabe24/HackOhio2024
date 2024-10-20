@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../static/PoolingResults.css";
 
 const PoolingResults = () => {
-  // Example hardcoded shipments and savings
-  const [poolingOptions, setPoolingOptions] = useState([
+    const navigate = useNavigate();
+    
+    // Example hardcoded shipments and savings
+    const [poolingOptions, setPoolingOptions] = useState([
     {
       id: 1,
       description: "Shipment with small electronics",
@@ -30,6 +32,11 @@ const PoolingResults = () => {
       savings: 15,
     },
   ]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/Home/PaymentInformation');
+  };
 
   // Function to calculate total savings for the user
   const calculateTotalSavings = () => {
@@ -58,7 +65,7 @@ const PoolingResults = () => {
         ))}
 
         <div className="buttonsContainer">
-          <button className="button">Proceed to Payment</button>
+          <button className="button" onClick={handleSubmit}>Proceed to Payment</button>
         </div>
       </div>
     </div>
