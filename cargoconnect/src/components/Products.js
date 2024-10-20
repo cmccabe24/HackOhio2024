@@ -1,16 +1,13 @@
 // Page for the Products to be listed 
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
-const Products = () => {
-    const [products, setProducts] = useState({
-        products: [
-            {itemType: '', pickupLocation: '', dropoffLocation: '', dimensions: '', weight: '', quantity: '', budget: ''}
-        ]
-    });
+const Products = ({products, setProducts}) => {
+    const navigate = useNavigate();
     
     const handleProductInputChange = (e, index) => {
         const { name, value } = e.target;
-        const updatedProducts = products.map((product, i) =>
+        const updatedProducts = products.products.map((product, i) =>
             i === index ? { ...product, [name]: value } : product
         );
         setProducts({ ...products, products: updatedProducts });
@@ -26,11 +23,16 @@ const Products = () => {
         }));
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/Home/PoolingResults');
+    };
+
     
 return (
     <div>
         <h3>Products</h3>
-        {products.map((product, index) => (
+        {products.products.map((product, index) => (
             <div key={index} className="productSection">
                 <h4>Product {index + 1}</h4>
                 <label>Item Type</label>
@@ -95,6 +97,7 @@ return (
 
         <button type="button" className='button' onClick={addNewProduct}>Add New Product</button>
         <br />
+        <button type="button" className='button' onClick={handleSubmit}>Pooling Results</button>
     </div>
 );
 };
