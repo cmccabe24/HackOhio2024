@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"; // Reverted to use Marker
 import '../static/TrackingPage.css';  // Assuming you have the CSS file
 
+
 const mapContainerStyle = {
   width: '100%',
   height: '400px',
@@ -31,7 +32,7 @@ const TrackingPage = () => {
     <div className="trackingPage">
       <h2>Shipment Tracking</h2>
       <div className="mapContainer">
-        <LoadScript googleMapsApiKey="AIzaSyDJeyMNMkUjs-1eBeA8zgxcpnQLfGneR6s">
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
           <GoogleMap
             mapContainerStyle={mapContainerStyle}
             zoom={10}
