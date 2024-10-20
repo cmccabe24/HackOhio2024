@@ -1,5 +1,5 @@
 // Booking Page
-import { useState} from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import '../static/BookingPage.css';
 
@@ -17,83 +17,101 @@ const BookingPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate('/Home/Products'); 
-
     }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setShippingInfo((shippingInfo) => ({
-          ...shippingInfo,
-          [name]: value,
+            ...shippingInfo,
+            [name]: value,
         }));
     };
 
-    
-    {/* Hardcoded useState */}
     return (
+        
         <div className="bookingPage">
-            <nav className="navBar">
-                <Link to="/Home" className="navLink">Home</Link>
-            </nav>
+            <div className="logo-container">
+        <img src="/cargoLogo.png" alt="Logo" className="logo" />
+      </div>
+            {/* Navigation Bar */}
+      <nav className="nav-bar">
+        <ul className="nav-list">
+          <li className="nav-item">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/about">About</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/services">Services</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
 
-            <div className="bookingPage">
+            <div className="formBackground">
                 <form onSubmit={handleSubmit}>            
-                    <h2>Shipping Information</h2>
-                    <br />    
-                    <label>First Name</label>
-                    <br />           
-                    <input
-                        type='text'
-                        name='firstName'
-                        required
-                        onChange={handleInputChange}
-                    />
+                    <h1>Contact Information</h1>
 
-                    <br />    
-                    <label>Last Name</label>
-                    <br />           
-                    <input
-                        type='text'
-                        name='lastName'
-                        required
-                        onChange={handleInputChange}
-                    />
+                    <div className="formField">
+                        <label>First Name</label>
+                        <input
+                            type='text'
+                            name='firstName'
+                            required
+                            onChange={handleInputChange}
+                        />
+                    </div>
 
-                    <br />    
-                    <label>Email</label>
-                    <br />           
-                    <input
-                        type='text'
-                        name='email'
-                        required
-                        onChange={handleInputChange}
-                    />
+                    <div className="formField">
+                        <label>Last Name</label>
+                        <input
+                            type='text'
+                            name='lastName'
+                            required
+                            onChange={handleInputChange}
+                        />
+                    </div>
 
-                    <br />    
-                    <label>Phone Number</label>
-                    <br />           
-                    <input
-                        type='text'
-                        name='phoneNumber'
-                        required
-                        onChange={handleInputChange}
-                    />
+                    <div className="formField">
+                        <label>Email</label>
+                        <input
+                            type='text'
+                            name='email'
+                            required
+                            onChange={handleInputChange}
+                        />
+                    </div>
 
-                    <br />    
-                    <label>Company</label>
-                    <br />           
-                    <input
-                        type='text'
-                        name='companyName'
-                        required
-                        onChange={handleInputChange}
-                    />
-                    <br />
+                    <div className="formField">
+                        <label>Phone Number</label>
+                        <input
+                            type='text'
+                            name='phoneNumber'
+                            required
+                            onChange={handleInputChange}
+                        />
+                    </div>
+
+                    <div className="formField">
+                        <label>Company</label>
+                        <input
+                            type='text'
+                            name='companyName'
+                            required
+                            onChange={handleInputChange}
+                        />
+                    </div>
 
                     <button className='button'>Add Products</button>
                 </form> 
+                
             </div>
+           
         </div>
+        
     );
 };
 
