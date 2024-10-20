@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import BookingPage from "./components/BookingPage";
 import PoolingResults from "./components/PoolingResults";
@@ -23,7 +23,9 @@ function App() {
     ]
   });
 
-  const [paymentInformation, setPaymentInformation] = useState([]);
+  const [paymentInformation, setPaymentInformation] = useState([
+    
+  ]);
 
   return (
     <div>
@@ -32,11 +34,11 @@ function App() {
           <Routes>
             <Route path='/Home' element={<Home/>} />
             <Route path="/" element={<Navigate replace to="/Home" />} />
-            <Route path='/Home/BookingPage' element={<BookingPage />} />
+            <Route path='/Home/BookingPage' element={<BookingPage shippingInfo={shippingInfo} setShippingInfo={setShippingInfo}/>} />
             <Route path='/Home/PoolingResults' element={<PoolingResults />} />
             <Route path='/Home/Products' element={<Products products={products} setProducts={setProducts}/>} />
             <Route path='/Home/TrackingPage' element={<TrackingPage/>} />
-            <Route path='/Home/PaymentInformation' element={<PaymentInformation />} />
+            <Route path='/Home/PaymentInformation' element={<PaymentInformation paymentInformation={paymentInformation} setPaymentInformation={setPaymentInformation} />} />
           </Routes>
         </div>
       </Router>

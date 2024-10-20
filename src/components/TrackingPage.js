@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"; // Reverted to use Marker
 import '../static/TrackingPage.css';  // Assuming you have the CSS file
 
@@ -31,6 +32,13 @@ const TrackingPage = () => {
   return (
     <div className="trackingPage">
       <h2>Shipment Tracking</h2>
+      <nav className="nav-bar">
+        <ul className="nav-list">
+          <li className="nav-item">
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+      </nav>
       <div className="mapContainer">
         <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
           <GoogleMap

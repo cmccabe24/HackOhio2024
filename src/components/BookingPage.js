@@ -3,15 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import '../static/BookingPage.css';
 
-const BookingPage = () => {
-    const [shippingInfo, setShippingInfo] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phoneNumber: '',
-        companyName: '',
-    });
-
+const BookingPage = ({shippingInfo, setShippingInfo}) => {
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -28,28 +20,27 @@ const BookingPage = () => {
     };
 
     return (
-        
         <div className="bookingPage">
             <div className="logo-container">
-        <img src="/cargoLogo.png" alt="Logo" className="logo" />
-      </div>
+                <img src="/cargoLogo.png" alt="Logo" className="logo" />
+            </div>
             {/* Navigation Bar */}
-      <nav className="nav-bar">
-        <ul className="nav-list">
-          <li className="nav-item">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/services">Services</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
+            <nav className="nav-bar">
+                <ul className="nav-list">
+                    <li className="nav-item">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/about">About</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/services">Services</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/contact">Contact</Link>
+                    </li>
+                </ul>
+            </nav>
 
             <div className="formBackground">
                 <form onSubmit={handleSubmit}>            

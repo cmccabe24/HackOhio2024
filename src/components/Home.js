@@ -4,7 +4,7 @@ import '../static/Home.css';
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="homePage">
       {/* Logo at the top */}
       <div className="logo-container">
         <img src="/cargoLogo.png" alt="Logo" className="logo" />
@@ -30,11 +30,10 @@ const Home = () => {
       <div>
         <img src="cargoBanner.png" alt='banner' className="img"/>
         <Link to='/Home/BookingPage'>
-        <img src="getStarted.png" alt='banner'/>
+        <img src="getStarted.png" alt='banner' className="imgButton"/>
         </Link>
-    </div>
-    </div>
-    
+      </div>
+    </div> 
   );
 }
 

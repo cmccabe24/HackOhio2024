@@ -1,5 +1,9 @@
 
-
+.bookingPage {
+    background-color: #f7f0e6;
+    min-height: fit-content;
+    padding: 20px;
+}
 
 .formField {
     margin-bottom: 25px; /* Space between fields */

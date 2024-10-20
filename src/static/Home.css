@@ -3,6 +3,13 @@ body {
     margin: 0;
     padding: 0;
   }
+
+.homePage{
+    background-color: #f7f0e6;
+    min-height: fit-content;
+    padding: 20px;
+}
+
 /* Container for the whole home page */
 .home-container {
     text-align: center;
@@ -53,9 +60,16 @@ body {
   }
   
   .img {
-    width: 1865px;
+    max-width: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
     display: block; /* Changes image to block-level element to remove inline spacing */
+  }
+
+  .imgButton {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
